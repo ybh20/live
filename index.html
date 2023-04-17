@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            background: #000000;
+        }
+
+        .box {
+            transform: rotateZ(45deg);
+            width: 230px;
+            height: 230px;
+        }
+
+        @keyframes pulsate {
+            0% {
+                transform: scale(.6);
+            }
+            25% {
+                transform: scale(0.8);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(0.8);
+            }
+            100% {
+                transform: scale(0.6);
+            }
+        }
+
+        .lave {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            animation: pulsate normal 3s infinite running linear; 
+        }
+
+        .lave::before {
+            content: "";
+            position: absolute;
+            display: block;
+            left: -100px;
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            border-radius: 50%;
+        }
+
+        .lave::after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: -100px;
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="lave"></div>
+    </div>
+</body>
+</html>
